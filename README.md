@@ -6,6 +6,8 @@
 
 A disciplina **Estruturas de Dados II** aprofunda os conceitos fundamentais de organização, manipulação e eficiência de estruturas de dados avançadas, aplicadas à resolução de problemas computacionais. Utilizamos **Java** como linguagem principal para implementação das estruturas e algoritmos.
 
+- [Materais](https://drive.google.com/drive/folders/1nWGAhFoNkHr4mz2FNuFWYuESSY_GbG8W?usp=drive_link)
+
 ## 📂 Estrutura do Repositório
 
 O repositório está organizado da seguinte forma:
