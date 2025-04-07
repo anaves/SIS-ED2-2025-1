@@ -1,0 +1,47 @@
+----- insercao no fim -----
+Tempo array estatico: 7ms
+Tempo ArrayList: 28ms
+Tempo LinkedList: 131ms
+Tempo Vector: 62ms
+
+Tempo array estatico: 7ms
+Tempo ArrayList: 27ms
+Tempo LinkedList: 134ms
+Tempo Vector: 50ms
+
+---- insercao no inicio ----
+Tempo ArrayList: 44989ms
+Tempo LinkedList: 137ms
+Tempo Vector: 44776ms
+
+--- remocao do inicio ----
+Tempo ArrayList: 46117ms
+Tempo LinkedList: 18ms
+Tempo Vector: 45898ms
+
+Estrutura	remove(0)
+ArrayList	Lento – precisa mover todos os elementos para a esquerda a cada remoção
+LinkedList	Rápido – só muda o ponteiro do primeiro nó
+Vector	Lento – mesma lógica do ArrayList, mas com sincronização extra
+
+--- remocao do fim ----
+Tempo ArrayList: 7ms
+Tempo LinkedList: 15ms
+Tempo Vector: 24ms
+
+--- consulta ----
+Tempo array estatico: 5ms
+Tempo ArrayList: 8ms
+Tempo LinkedList: 122624ms
+Tempo Vector: 11ms
+
+Array e ArrayList são muito rápidos para acesso direto.
+Vector tem desempenho similar ao ArrayList para leitura.
+LinkedList é muito mais lento porque precisa percorrer os nós até chegar no índice.
+
+
+
+-------------
+Esse teste mostra claramente como a escolha da estrutura impacta o desempenho em diferentes cenários.
+remove(0) em ArrayList/Vector: O(n)
+remove(0) em LinkedList: O(1)
