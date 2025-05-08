@@ -4,11 +4,6 @@ Tempo ArrayList: 28ms
 Tempo LinkedList: 131ms
 Tempo Vector: 62ms
 
-Tempo array estatico: 7ms
-Tempo ArrayList: 27ms
-Tempo LinkedList: 134ms
-Tempo Vector: 50ms
-
 ---- insercao no inicio ----
 Tempo ArrayList: 44989ms
 Tempo LinkedList: 137ms
