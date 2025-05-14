@@ -1,4 +1,6 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 public class App {
 
@@ -12,6 +14,12 @@ public class App {
 
         return hash % tam;
     }
+
+    public static boolean buscarPalavra(String palavra, ArrayList<String>[] tabelaHash, int tam) {
+	    
+        return true;
+    }
+    
     public static void main(String[] args) throws Exception {
         int totalCategorias = 26;
         ArrayList<String> tabelaHash[] =  new ArrayList[totalCategorias];
@@ -25,14 +33,22 @@ public class App {
             System.out.println(i + "-> " + tabelaHash[i]);
         }
         System.out.println("Adicionando palavras...");
-        for (int i = 0; i < 100; i++) {
-            String palavra = GeradorPalavras.gerarPalavraAleatoria(3, 10);
+        List<String> listaPalavra = GeradorPalavras.lerPalavras();
+        for (String palavra : listaPalavra) {
+            palavra = palavra.toUpperCase();
             int categoria = funcaoHash(palavra, totalCategorias);
-            tabelaHash[categoria].add(palavra);            
+            tabelaHash[categoria].add(palavra);     
         }
+        // for (int i = 0; i < 100; i++) {
+        //     String palavra = GeradorPalavras.gerarPalavraAleatoria(3, 10);
+        //     int categoria = funcaoHash(palavra, totalCategorias);
+        //     tabelaHash[categoria].add(palavra);            
+        // }
         System.out.println("---PREENCHIDA---");
         for (int i = 0; i < tabelaHash.length; i++) {
-            System.out.println(i + "-> total = " + tabelaHash[i]);
+            ArrayList<String> el = tabelaHash[i];
+            String letra = el.get(0);
+            System.out.println(i + " "+ letra + "-> total = " + el.size());
         }
     }
 }
