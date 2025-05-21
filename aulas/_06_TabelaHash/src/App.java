@@ -12,7 +12,7 @@ public class App {
         // A -> valor 65
         /// 65 -> 0
         /// 90 -> 25
-        //hash = 13+palavra.toUpperCase().charAt(0);  // pega a inicial
+        // hash = 13+palavra.toUpperCase().charAt(0);  // pega a inicial
         palavra = palavra.toUpperCase();
         for (int i = 0; i < palavra.length(); i++) {
             hash += palavra.charAt(i);
@@ -74,22 +74,22 @@ public class App {
         }while(opcao == JOptionPane.OK_OPTION);
 
 
-        // teste de desempenho
-        long inicio = System.currentTimeMillis();
-        for (String palavra : listaPalavra) {
-            // teste obvio
-            listaPalavra.contains(palavra.toUpperCase());
-        }
-        long fim = System.currentTimeMillis();
-        System.out.println("Busca ArrayList "+(fim-inicio)+ " ms");
+        // // teste de desempenho
+        // long inicio = System.currentTimeMillis();
+        // for (String palavra : listaPalavra) {
+        //     // teste obvio
+        //     listaPalavra.contains(palavra.toUpperCase());
+        // }
+        // long fim = System.currentTimeMillis();
+        // System.out.println("Busca ArrayList "+(fim-inicio)+ " ms");
 
 
-        inicio = System.currentTimeMillis();
-        for (String palavra : listaPalavra) {
-            // teste obvio
-            buscarPalavra(palavra, tabelaHash, totalCategorias);
-        }
-        fim = System.currentTimeMillis();
-        System.out.println("Busca Tabela Hash "+(fim-inicio)+ " ms");
+        // inicio = System.currentTimeMillis();
+        // for (String palavra : listaPalavra) {
+        //     // teste obvio
+        //     buscarPalavra(palavra, tabelaHash, totalCategorias);
+        // }
+        // fim = System.currentTimeMillis();
+        // System.out.println("Busca Tabela Hash "+(fim-inicio)+ " ms");
     }
 }
