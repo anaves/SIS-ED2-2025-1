@@ -1,14 +1,15 @@
 import java.util.Hashtable;
 import java.util.Scanner;
 
-public class AppHashTable {
+public class HashtableFuncionario {
     private static Scanner input = new Scanner(System.in);
-    private static Hashtable<String, String> alunos = new Hashtable<>();
+    private static Hashtable<String, Funcionario> funcs = new Hashtable<>();
     
     public static int menu(){
+        System.out.println(" -----------------  ");
         System.out.println("1- Cadastrar");
         System.out.println("2- Listar todos");
-        System.out.println("3- Buscar pela matricula");
+        System.out.println("3- Buscar pelo CPF");
         System.out.println("0 - Sair");
         System.out.print("Escolha: ");
         int op = input.nextInt();
@@ -18,29 +19,34 @@ public class AppHashTable {
 
     public static void cadastrar(){
         System.out.println("----Cadastro----");
-        System.out.print("Matricula: ");
-        String matricula = input.nextLine();
-        if (alunos.containsKey(matricula)){
-            System.out.println("Matricula ja cadastrada");
+        System.out.print("CPF: ");
+        String cpf = input.nextLine();
+        if (funcs.containsKey(cpf)){
+            System.out.println("CPF ja cadastrado");
             System.out.println("...vamos de novo...");
             cadastrar();
         }else{
             System.out.print("Nome: ");
             String nome = input.nextLine();
-            alunos.put(matricula, nome);
+            System.out.print("Salario: R$ ");
+            double salario = input.nextDouble();
+            Funcionario obj = new Funcionario(cpf, nome);
+            obj.setSalario(salario);
+            funcs.put(cpf, obj);
+            System.out.println("... cadastro com sucesso");
         }
     }
 
-    public static String buscar(){
+    public static Funcionario buscar(){
         System.out.println("---Buscar---");
-        System.out.println("Matricula: ");
-        String matricula = input.nextLine();
-        if(alunos.containsKey(matricula)){
-            String alu = alunos.get(matricula);
-            System.out.println("Aluno encontrado: " + alu );
-            return alu;
+        System.out.print("CPF: ");
+        String cpf = input.nextLine();
+        if(funcs.containsKey(cpf)){
+            Funcionario f = funcs.get(cpf);
+            System.out.println(f);
+            return f;
         }
-        System.out.println("Matricula "+ matricula + " inexistente");
+        System.out.println("CPF "+ cpf + " inexistente");
         return null;
     }
     public static void main(String[] args) {        
@@ -52,7 +58,7 @@ public class AppHashTable {
                     cadastrar();
                     break;
                 case 2:
-                    System.out.println(alunos);
+                    System.out.println(funcs);
                     break;
                 case 3:
                     buscar();
