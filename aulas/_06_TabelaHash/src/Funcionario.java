@@ -1,9 +1,11 @@
+
 public class Funcionario {
     // atributos
     private String documento;
     private String nome;
     private double salario;
-    
+
+
     public Funcionario(String documento, String nome) {
         setDocumento(documento);
         setNome(nome);
@@ -32,6 +34,8 @@ public class Funcionario {
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
+
 
     @Override
     public String toString() {

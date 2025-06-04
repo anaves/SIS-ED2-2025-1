@@ -1,6 +1,7 @@
 import java.util.Hashtable;
 import java.util.Scanner;
 
+// META: deixar essa classe GENERICA - 
 public class HashtableFuncionario {
     private static Scanner input = new Scanner(System.in);
     private static Hashtable<String, Funcionario> funcs = new Hashtable<>();
@@ -10,6 +11,8 @@ public class HashtableFuncionario {
         System.out.println("1- Cadastrar");
         System.out.println("2- Listar todos");
         System.out.println("3- Buscar pelo CPF");
+        System.out.println("4- Excluir");
+        System.out.println("5- Atualizar");
         System.out.println("0 - Sair");
         System.out.print("Escolha: ");
         int op = input.nextInt();
