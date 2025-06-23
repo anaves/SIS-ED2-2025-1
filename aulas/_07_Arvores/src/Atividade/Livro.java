@@ -45,21 +45,13 @@ public class Livro implements Comparable<Livro>{
     }
 
     private String geraChave(){
-        String chave = (this.getAutor()+this.getTitulo()+this.getAno()).toLowerCase();
+        String chave = (this.getTitulo()+this.getAno()).toLowerCase();
         return chave;
     }
     @Override
     public int compareTo(Livro outroLivro) {
         String chaveThis = this.geraChave();
         String outroLivroAutorTituloAno = outroLivro.geraChave();
-        System.out.println("chaveThis "+ chaveThis);
-        System.out.println("chaveOutro "+ outroLivroAutorTituloAno);
         return chaveThis.compareTo(outroLivroAutorTituloAno);
     }
-
-    
-
-
-
-
 }
